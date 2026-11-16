@@ -3,58 +3,188 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>نُظم - نظام إدارة المحلات والمحاسبة | Nuzum</title>
-<meta name="description" content="نُظم: برنامج نقطة بيع ومحاسبة للمحلات في عُمان. Nuzum: point of sale and accounting for shops in Oman.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+<title>واحة الأكسجين · أنظمة تصنع شركات محترفة | Oxygen Oasis</title>
+<meta name="description" content="واحة الأكسجين: أنظمة إدارة للشركات والمحلات في عُمان. نظام «واحة الأكسجين للمحلات» يشتغل بدون إنترنت، بترخيص مدى الحياة وبدون اشتراك.">
+<meta property="og:title" content="واحة الأكسجين · أنظمة تصنع شركات محترفة">
+<meta property="og:description" content="جهاز كاشير كامل والبرنامج مجاناً، 224 ر.ع مرة واحدة. أو البرنامج وحده بـ 49 ر.ع.">
+<meta property="og:image" content="https://hisham900.github.io/nuzum/assets/bundle-hardware.jpg">
+<meta name="theme-color" content="#18213d">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <style>
-  :root { --navy: #0F1B3D; --blue: #2B59C3; --accent: #2B86FF; --bg: #EDF1F8; --text: #18213a; --muted: #5d6680; }
+  @font-face{font-family:'Alexandria';font-weight:300;font-display:swap;src:url(assets/fonts/alexandria-arabic-300-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+  @font-face{font-family:'Alexandria';font-weight:300;font-display:swap;src:url(assets/fonts/alexandria-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+  @font-face{font-family:'Alexandria';font-weight:400;font-display:swap;src:url(assets/fonts/alexandria-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+  @font-face{font-family:'Alexandria';font-weight:400;font-display:swap;src:url(assets/fonts/alexandria-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+  @font-face{font-family:'Alexandria';font-weight:600;font-display:swap;src:url(assets/fonts/alexandria-arabic-600-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+  @font-face{font-family:'Alexandria';font-weight:600;font-display:swap;src:url(assets/fonts/alexandria-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+  @font-face{font-family:'Alexandria';font-weight:700;font-display:swap;src:url(assets/fonts/alexandria-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+  @font-face{font-family:'Alexandria';font-weight:700;font-display:swap;src:url(assets/fonts/alexandria-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+  @font-face{font-family:'El Messiri';font-weight:400;font-display:swap;src:url(assets/fonts/el-messiri-arabic-400-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+  @font-face{font-family:'El Messiri';font-weight:400;font-display:swap;src:url(assets/fonts/el-messiri-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+  @font-face{font-family:'El Messiri';font-weight:500;font-display:swap;src:url(assets/fonts/el-messiri-arabic-500-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+  @font-face{font-family:'El Messiri';font-weight:500;font-display:swap;src:url(assets/fonts/el-messiri-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+  @font-face{font-family:'El Messiri';font-weight:700;font-display:swap;src:url(assets/fonts/el-messiri-arabic-700-normal.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0898-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+  @font-face{font-family:'El Messiri';font-weight:700;font-display:swap;src:url(assets/fonts/el-messiri-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
+  :root { --navy: #18213d; --navy2: #1f2b52; --cream: #f1e8d8; --blue: #2B86FF; --coral: #f2734f; --green: #1fa855; --bg: #f6f2ea; --text: #18213d; --muted: #5d6680; --line: #e4dccb; --gold: #b8893a; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Cairo', Tahoma, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
-  header { background: linear-gradient(160deg, var(--navy), #16244d); color: #fff; padding: 48px 20px 64px; text-align: center; }
-  .mark { width: 72px; height: 72px; border-radius: 20px; background: #0b1430; display: inline-grid; place-items: center; }
-  h1 { margin: 14px 0 4px; font-size: 34px; }
-  header p { margin: 0; color: #c3cde8; font-size: 18px; }
-  main { max-width: 860px; margin: -36px auto 0; padding: 0 16px 40px; }
-  .card { background: #fff; border-radius: 18px; padding: 24px; margin-bottom: 16px; }
-  h2 { margin: 0 0 8px; font-size: 21px; }
-  ul { margin: 0; padding-inline-start: 22px; }
-  .en { direction: ltr; text-align: left; }
+  body { margin: 0; font-family: 'Alexandria', Tahoma, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+  img { max-width: 100%; height: auto; display: block; }
   a { color: var(--blue); font-weight: 700; }
+  header { background: radial-gradient(120% 90% at 85% 0%, #24335f 0%, var(--navy) 60%); color: #fff; padding: 36px 16px 72px; text-align: center; }
+  header .logo { width: min(360px, 82%); margin: 0 auto; }
+  header .tag { margin: 12px 0 0; font-size: 26px; font-weight: 500; color: var(--cream); }
+  header .tag b { font-weight: 700; color: #e2b866; }
+  header .sub { margin: 6px auto 0; max-width: 560px; color: #c3cde8; font-size: 16px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 12px 22px; font-size: 16px; }
+  .btn-wa { background: var(--green); color: #fff; }
+  .btn-ghost { border: 2px solid rgba(255,255,255,.35); color: #fff; }
+  .actions { margin-top: 22px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  main { max-width: 960px; margin: -40px auto 0; padding: 0 16px 40px; }
+  .card { background: #fff; border-radius: 20px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 0 var(--line); }
+  h2, h3, .tag, .amount, .offer b { font-family: 'El Messiri', 'Alexandria', sans-serif; }
+  h2 { margin: 0 0 8px; font-size: 26px; line-height: 1.5; font-weight: 700; }
+  .gold { color: var(--gold); }
+  .offer { background: linear-gradient(135deg, #fff8ea, #fff); border: 2px solid var(--gold); border-radius: 20px; padding: 18px 22px; margin-bottom: 16px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .offer .txt { flex: 1 1 320px; }
+  .offer b { display: block; font-size: 22px; line-height: 1.5; }
+  .offer p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+  .offer .btn { flex: 0 0 auto; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; padding: 0; list-style: none; }
+  .chips li { border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: 4px 14px; font-size: 15px; color: #fff; }
+  .note { font-size: 14px; color: var(--muted); background: var(--bg); border-radius: 12px; padding: 8px 12px; margin: 0 0 14px; }
+  h3 { margin: 0 0 4px; font-size: 21px; font-weight: 700; line-height: 1.5; }
+  p { margin: 0 0 10px; }
+  .kicker { display: inline-block; background: #fdeae3; color: #b8462a; font-weight: 800; font-size: 14px; border-radius: 999px; padding: 2px 12px; margin-bottom: 8px; }
+  .muted { color: var(--muted); }
+  .feat { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .feat div { background: var(--bg); border-radius: 14px; padding: 14px 16px; }
+  .feat b { display: block; font-size: 16px; }
+  .feat span { color: var(--muted); font-size: 15px; }
+  .prices { display: grid; grid-template-columns: 1.35fr 1fr; gap: 16px; }
+  .price { border-radius: 20px; padding: 22px; background: #fff; border: 2px solid var(--line); display: flex; flex-direction: column; }
+  .price.main { border-color: var(--navy); }
+  .price .hw { border-radius: 14px; overflow: hidden; margin: 10px 0 14px; background: var(--cream); }
+  .amount { font-size: 46px; font-weight: 800; line-height: 1.1; margin: 6px 0 2px; }
+  .amount small { font-size: 20px; font-weight: 700; margin-inline-start: 4px; }
+  .once { color: #b8462a; font-weight: 700; font-size: 15px; }
+  .price ul { margin: 12px 0 16px; padding-inline-start: 20px; }
+  .price .btn { margin-top: auto; align-self: flex-start; }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .addons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .addon { background: var(--bg); border-radius: 14px; padding: 14px 16px; }
+  .addon .p { float: left; font-weight: 800; background: #fff; border-radius: 999px; padding: 0 12px; border: 1px solid var(--line); }
+  .systems { background: var(--navy); color: #fff; }
+  .systems p { color: #d5dcf0; }
+  .systems .btn { margin-top: 6px; }
+  .en { direction: ltr; text-align: left; }
   footer { text-align: center; color: var(--muted); font-size: 14px; padding: 8px 16px 32px; }
+  footer img { width: 170px; margin: 0 auto 6px; }
+  @media (max-width: 720px) {
+    .prices, .addons, .feat { grid-template-columns: 1fr; }
+    h2 { font-size: 21px; }
+    .amount { font-size: 40px; }
+  }
 </style>
 </head>
 <body>
 <header>
-  <div class="mark"><svg width="46" height="46" viewBox="0 0 100 100"><circle cx="54" cy="18" r="9" fill="#2B86FF"/><path d="M22 40 C22 78 54 86 70 66 C76 58 78 44 80 30" fill="none" stroke="#2B86FF" stroke-width="11" stroke-linecap="round"/></svg></div>
-  <h1>نُظم</h1>
-  <p>نظام إدارة المحلات والمحاسبة · Nuzum point of sale &amp; accounting</p>
+  <img class="logo" src="assets/logo-white.png" alt="واحة الأكسجين · Oxygen Oasis" width="720" height="173">
+  <p class="tag">أنظمة تصنع <b>شركات محترفة</b></p>
+  <p class="sub">نبني أنظمة إدارة للشركات والمحلات في سلطنة عُمان. نفهم شغلك أول، وبعدين نسوي لك نظام متكامل يناسبه.</p>
+  <div class="actions">
+    <a class="btn btn-wa" href="https://wa.me/96897550595?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%A7%D8%AD%D8%A9%20%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%20%D9%88%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1">تواصل معنا على واتساب</a>
+    <a class="btn btn-ghost" href="#prices">الأسعار</a>
+  </div>
 </header>
 <main>
   <section class="card">
-    <h2>ما هو نُظم؟</h2>
-    <p>برنامج يعمل على أجهزة المحل (ويندوز) لإدارة البيع والمشتريات والمخزون والديون والتقارير، مصمم للمحلات في سلطنة عُمان، بالعربية والإنجليزية. بيانات المحل تبقى على أجهزة المحل نفسه.</p>
-    <ul>
-      <li>نقطة بيع سريعة مع الباركود وطباعة الإيصالات.</li>
-      <li>المخزون والمشتريات والموردون والعملاء والديون.</li>
-      <li>نسخ احتياطي يومي، ومع إضافة <b>Google Drive</b> تُحفظ نسخة في درايف صاحب المحل.</li>
-      <li>إضافة <b>تقارير الجوال</b>: ملخص المبيعات والأرباح في حساب جوجل الخاص بصاحب المحل.</li>
-    </ul>
+    <span class="kicker">صاحب محل؟</span>
+    <h2>واحة الأكسجين <span class="gold">للمحلات</span></h2>
+    <p>نظام كاشير وإدارة كامل للمحل: البيع والمشتريات والمخزون وديون العملاء والتقارير، بالعربي والإنجليزي. يناسب محلات العطور والبخور، والعبايات والملابس، والأقمشة، والأحذية، والساعات والإكسسوارات، والهدايا.</p>
+    <div class="feat">
+      <div><b>يشتغل بدون إنترنت</b><span>البيع ما يوقف لو انقطع النت، وبياناتك على جهاز محلك.</span></div>
+      <div><b>مدى الحياة، بدون اشتراك</b><span>تدفع مرة واحدة بس، وما في رسوم شهرية.</span></div>
+      <div><b>إدارة محلك كاملة</b><span>مبيعات، مخزون، مشتريات، ديون العملاء، موظفين، مصاريف.</span></div>
+      <div><b>باركود وإيصالات</b><span>بيع سريع بالماسح، وطباعة الإيصال وملصقات الباركود.</span></div>
+    </div>
   </section>
+
+  <section class="offer" id="offer" data-ends="2026-11-30T00:00:00+04:00">
+    <div class="txt">
+      <b>عرض <span class="gold">العيد الوطني</span> لين 29 نوفمبر</b>
+      <p>البرنامج بـ 49 ر.ع، ومعه النسخة الاحتياطية على Google Drive وتقارير محلك على جوالك.</p>
+    </div>
+    <a class="btn btn-wa" href="https://wa.me/96897550595?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%A7%D8%AD%D8%A9%20%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%20%D9%88%D8%A3%D8%A8%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A">أبي العرض</a>
+  </section>
+
+  <section class="card" id="prices">
+    <h2>الأسعار</h2>
+    <p class="muted">كل الأسعار بالريال العُماني، تُدفع مرة واحدة.</p>
+    <div class="prices">
+      <div class="price main">
+        <h3>جهاز كاشير كامل، والبرنامج مجاناً</h3>
+        <div class="hw"><img src="assets/bundle-hardware.jpg" alt="شاشة لمس 15.6 وطابعة فواتير ودرج كاش وماسح باركود" width="980" height="520" loading="lazy"></div>
+        <div class="amount">224<small>ر.ع</small></div>
+        <div class="once">مرة واحدة · بدون اشتراك</div>
+        <ul>
+          <li>شاشة لمس 15.6 بوصة</li>
+          <li>طابعة فواتير</li>
+          <li>درج كاش</li>
+          <li>ماسح باركود</li>
+          <li>برنامج واحة الأكسجين للمحلات مجاناً</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/96897550595?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%A7%D8%AD%D8%A9%20%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%20%D9%88%D8%A3%D8%A8%D9%8A%20%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%AC%D9%87%D8%A7%D8%B2%20224">أطلب باقة الجهاز</a>
+      </div>
+      <div class="price">
+        <h3>البرنامج وحده</h3>
+        <p class="muted">لو عندك جهاز في المحل.</p>
+        <div class="amount">49<small>ر.ع</small></div>
+        <div class="once">مرة واحدة · ترخيص مدى الحياة</div>
+        <ul>
+          <li>واحة الأكسجين للمحلات</li>
+          <li>يشتغل بدون إنترنت</li>
+          <li>عربي وإنجليزي</li>
+        </ul>
+        <p class="note">السعر للبرنامج والترخيص بس. التركيب عن بُعد والتدريب والمتابعة مب داخلة فيه.</p>
+        <a class="btn btn-navy" href="https://wa.me/96897550595?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%A7%D8%AD%D8%A9%20%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%20%D9%88%D8%A3%D8%A8%D9%8A%20%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D9%88%D8%AD%D8%AF%D9%87">أطلب البرنامج</a>
+      </div>
+    </div>
+    <h3 style="margin-top:20px">إضافات اختيارية</h3>
+    <div class="addons">
+      <div class="addon"><span class="p">+10 ر.ع</span><b>نسخة احتياطية على الإنترنت</b><br><span class="muted">حساباتك محفوظة في Google Drive الخاص فيك، حتى لو خرب الجهاز.</span></div>
+      <div class="addon"><span class="p">+10 ر.ع</span><b>تقارير محلك على جوالك</b><br><span class="muted">تابع مبيعاتك وأرباحك وأنت برّا المحل.</span></div>
+    </div>
+  </section>
+
+  <section class="card systems">
+    <span class="kicker">عندك شركة؟</span>
+    <h2>نرتّب شغلك بنظام <span style="color:#e2b866">يناسب طريقة عملك</span></h2>
+    <p>واحة الأكسجين ما تسوي برامج محلات بس. نجلس معك ونفهم طريقة شغل شركتك، وبعدين نبني لك نظام إدارة متكامل على مقاسها، ومعه التدريب والدعم والمتابعة لين يمشي الشغل عليه.</p>
+    <ul class="chips"><li>المطاعم</li><li>شركات المقاولات</li><li>المكاتب الهندسية</li><li>معارض السيارات</li><li>المتاجر الإلكترونية</li><li>شركات المياه والصرف الصحي</li></ul>
+    <a class="btn btn-wa" href="https://wa.me/96897550595?text=%D9%87%D9%84%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%20%D9%88%D8%A7%D8%AD%D8%A9%20%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%20%D9%88%D8%A3%D8%A8%D9%8A%20%D9%86%D8%B8%D8%A7%D9%85%20%D9%84%D8%B4%D8%B1%D9%83%D8%AA%D9%8A">كلّمنا عن شركتك</a>
+  </section>
+
   <section class="card en">
-    <h2>About Nuzum</h2>
-    <p>Nuzum is a Windows point-of-sale and accounting program for shops in Oman (Arabic and English). The shop's data stays on the shop's own computers. Optional add-ons keep a copy of the daily backup in the shop owner's own Google Drive, and put a sales summary in the owner's own Google account so they can read it on their phone. Nuzum has no server of its own that stores shop or Google data.</p>
+    <h2>About Oxygen Oasis</h2>
+    <p>Oxygen Oasis builds management systems for companies and shops in Oman. Its point-of-sale product, <b>Oxygen Oasis Retail</b> (previously named Nuzum), is a point-of-sale and accounting program in Arabic and English that runs on the shop's own computer and works without internet. The shop's data stays on the shop's own computer. Optional add-ons keep a copy of the daily backup in the shop owner's own Google Drive, and put a sales summary in the owner's own Google account so they can read it on their phone. We have no server of our own that stores shop or Google data.</p>
   </section>
+
   <section class="card">
     <h2>الخصوصية · Privacy</h2>
     <p><a href="privacy.html">سياسة الخصوصية · Privacy policy</a></p>
   </section>
   <section class="card">
     <h2>تواصل معنا · Contact</h2>
-    <p>واتساب / هاتف: <span dir="ltr">+968 9755 0595</span><br>البريد: <a href="mailto:h95212948@gmail.com" dir="ltr">h95212948@gmail.com</a></p>
+    <p>واتساب / هاتف: <span dir="ltr">+968 9755 0595</span><br>إنستقرام: <a href="https://www.instagram.com/oxygenoasis.om/" dir="ltr">@oxygenoasis.om</a><br>البريد: <a href="mailto:h95212948@gmail.com" dir="ltr">h95212948@gmail.com</a></p>
   </section>
 </main>
-<footer>© 2026 نُظم · Nuzum</footer>
+<footer>
+  <img src="assets/logo-dark.png" alt="واحة الأكسجين" width="480" height="115">
+  © 2026 واحة الأكسجين · Oxygen Oasis
+</footer>
+<script>
+  (function () { var o = document.getElementById("offer"); if (o && Date.now() >= Date.parse(o.dataset.ends)) o.remove(); })();
+</script>
 </body>
 </html>
